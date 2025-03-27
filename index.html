@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東京自由行8天7夜</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            text-align: left;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2,
+        h3 {
+            text-align: center;
+            /* 標題與副標題都置中 */
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* 按鈕置中 */
+            gap: 15px;
+            /* 保持按鈕間距 */
+            margin-bottom: 20px;
+            /* 控制按鈕容器底部的間距 */
+        }
+
+        .day-btn {
+            width: 100px;
+            height: 40px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            line-height: 40px;
+            color: #000000;
+            background-color: transparent;
+            border: 1px solid #ffb300;
+            transition: all .3s linear;
+            min-width: 80px;
+            /* 保持按鈕大小一致 */
+            margin-top: 10px;
+            /* 保持按鈕上下的間距 */
+        }
+
+        .day-btn:hover {
+            background-color: #ffb300;
+            color: #fff;
+        }
+
+        .itinerary {
+            display: none;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #8ddfff;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .back-container {
+            text-align: center;
+            /* 讓返回按鈕置中 */
+            margin-top: 20px;
+        }
+
+        .back-btn {
+            width: 150px;
+            height: 40px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            line-height: 40px;
+            color: #000000;
+            background-color: transparent;
+            border: 1px solid #ff4848;
+            transition: all .3s linear;
+            min-width: 80px;
+            /* 保持按鈕大小一致 */
+            margin-top: 10px;
+            /* 保持按鈕上下的間距 */
+        }
+
+        .back-btn:hover {
+            background-color: #ff4848;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>東京自由行8天7夜</h2>
+
+        <div class="button-container" id="main-buttons">
+            <button class="day-btn" onclick="showItinerary(9)">行李清單</button>
+            <button class="day-btn" onclick="showItinerary(10)">花費清單</button>
+            <button class="day-btn" onclick="showItinerary(1)">第一天</button>
+            <button class="day-btn" onclick="showItinerary(2)">第二天</button>
+            <button class="day-btn" onclick="showItinerary(3)">第三天</button>
+            <button class="day-btn" onclick="showItinerary(4)">第四天</button>
+            <button class="day-btn" onclick="showItinerary(5)">第五天</button>
+            <button class="day-btn" onclick="showItinerary(6)">第六天</button>
+            <button class="day-btn" onclick="showItinerary(7)">第七天</button>
+            <button class="day-btn" onclick="showItinerary(8)">第八天</button>
+        </div>
+        <div id="itinerary-9" class="itinerary">
+            <h3>行李清單</h3>
+            <ul>
+                <li><input type="checkbox" id="item1"> 護照 & 身分證</li>
+                <li><input type="checkbox" id="item2"> 外幣 & 信用卡</li>
+                <li><input type="checkbox" id="item3"> 換洗衣物</li>
+                <li><input type="checkbox" id="item4"> 充電器 & 行動電源</li>
+                <li><input type="checkbox" id="item5"> 盥洗用品</li>
+                <li><input type="checkbox" id="item6"> 個人藥品</li>
+            </ul>
+            <div class="back-container">
+                <button class="back-btn" onclick="backToMain()">返回</button>
+            </div>
+        </div>
+
+        <div id="itinerary-10" class="itinerary">
+            <h3>花費清單</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>費用（台幣/日幣）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>南千住民宿5天</strong></td>
+                        <td>NT$ 6714</td>
+                    </tr>
+                    <tr>
+                        <td><strong>三井花園酒店2天</strong></td>
+                        <td>NT$ 2949</td>
+                    </tr>
+                    <tr>
+                        <td><strong>京成電鐵 Skyliner</strong></td>
+                        <td>NT$ 475</td>
+                    </tr>
+                    <tr>
+                        <td><strong>木更津OUTLET 接駁車(來回)</strong></td>
+                        <td>¥3000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>東京迪士尼</strong></td>
+                        <td>NT$ 1750</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Esim 8 天</strong></td>
+                        <td>NT$ 783</td>
+                    </tr>
+                    <tr style="background-color: #ffeb99;">
+                        <td><strong>總共</strong></td>
+                        <td id="total-cost"><strong> NT$ 12671+¥3000</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="back-container">
+                <button class="back-btn" onclick="backToMain()">返回</button>
+            </div>
+        </div>
+
+        <div id="itinerary-1" class="itinerary">
+            <h3>第一天</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>行程</th>
+                        <th>交通</th>
+                        <th>備註</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>13:00-17:35</td>
+                        <td>🛫KHH➡️🛬NRT</td>
+                        <td>中華航空</td>
+                        <td>飛機餐</td>
+                    </tr>
+                    <tr>
+                        <td>15:00-19:20</td>
+                        <td>🛫TPE➡️🛬NRT</td>
+                        <td>星宇航空</td>
+                        <td>飛機餐</td>
+                    </tr>
+                    <tr>
+                        <td>20:30-21:30</td>
+                        <td>成田機場➡️南千住民宿</td>
+                        <td>Skyliner➕JJ(常磐線)成田</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>21:40-00:00</td>
+                        <td>吃晚餐</td>
+                        <td>-</td>
+                        <td>民宿附近解決</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="back-container">
+                <button class="back-btn" onclick="backToMain()">返回</button>
+            </div>
+        </div>
+
+        <div id="itinerary-2" class="itinerary">
+            <h3>第二天</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>行程</th>
+                        <th>交通</th>
+                        <th>備註</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:50-09:10</td>
+                        <td>南千住➡️東京車站</td>
+                        <td>JJ(常磐線)品川</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>09:25-10:15</td>
+                        <td>八重洲B2(12號)公車站➡️木更津OUTLET</td>
+                        <td>木更津 接駁車</td>
+                        <td>車票 ¥1500</td>
+                    </tr>
+                    <tr>
+                        <td>20:30-21:20</td>
+                        <td>木更津OUTLET➡️八重洲B2(12號)公車站</td>
+                        <td>木更津 接駁車</td>
+                        <td>車票 ¥1500</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>吃晚餐</td>
+                        <td>-</td>
+                        <td>東京車站B1</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>東京車站➡️南千住</td>
+                        <td>JJ(常磐線)成田</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>美食</th>
+                        <th>備註</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>月島文字燒 Tamatoya</td>
+                        <td>東京車站B1</td>
+                    </tr>
+                    <tr>
+                        <td>壽壽木 炸豬排</td>
+                        <td>東京車站B1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="back-container">
+                <button class="back-btn" onclick="backToMain()">返回</button>
+            </div>
+        </div>
+
+        <div id="itinerary-3" class="itinerary">
+            <h3>第三天</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>行程</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:00-12:00</td>
+                        <td>參觀吉卜力公園</td>
+                    </tr>
+                    <tr>
+                        <td>15:00-18:00</td>
+                        <td>遊覽涉谷街頭</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="back-container">
+                <button class="back-btn" onclick="backToMain()">返回</button>
+            </div>
+        </div>
+
+        <div id="itinerary-3" class="itinerary">
+            <h3>第四天</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>行程</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:00-12:00</td>
+                        <td>參觀吉卜力公園</td>
+                    </tr>
+                    <tr>
+                        <td>15:00-18:00</td>
+                        <td>遊覽涉谷街頭</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="back-container">
+                <button class="back-btn" onclick="backToMain()">返回</button>
+            </div>
+        </div>
+
+        <div id="itinerary-3" class="itinerary">
+            <h3>第五天</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>行程</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:00-12:00</td>
+                        <td>參觀吉卜力公園</td>
+                    </tr>
+                    <tr>
+                        <td>15:00-18:00</td>
+                        <td>遊覽涉谷街頭</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="back-container">
+                <button class="back-btn" onclick="backToMain()">返回</button>
+            </div>
+        </div>
+
+        <div id="itinerary-3" class="itinerary">
+            <h3>第六天</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>行程</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:00-12:00</td>
+                        <td>參觀吉卜力公園</td>
+                    </tr>
+                    <tr>
+                        <td>15:00-18:00</td>
+                        <td>遊覽涉谷街頭</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="back-container">
+                <button class="back-btn" onclick="backToMain()">返回</button>
+            </div>
+        </div>
+
+        <div id="itinerary-3" class="itinerary">
+            <h3>第七天</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>行程</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:00-12:00</td>
+                        <td>參觀吉卜力公園</td>
+                    </tr>
+                    <tr>
+                        <td>15:00-18:00</td>
+                        <td>遊覽涉谷街頭</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="back-container">
+                <button class="back-btn" onclick="backToMain()">返回</button>
+            </div>
+        </div>
+
+        <div id="itinerary-3" class="itinerary">
+            <h3>第八天</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>時間</th>
+                        <th>行程</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:00-12:00</td>
+                        <td>參觀吉卜力公園</td>
+                    </tr>
+                    <tr>
+                        <td>15:00-18:00</td>
+                        <td>遊覽涉谷街頭</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="back-container">
+                <button class="back-btn" onclick="backToMain()">返回</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function showItinerary(day) {
+            document.getElementById('main-buttons').style.display = 'none';
+            document.querySelectorAll('.itinerary').forEach(it => it.style.display = 'none');
+            document.getElementById('itinerary-' + day).style.display = 'block';
+        }
+
+        function backToMain() {
+            document.querySelectorAll('.itinerary').forEach(it => it.style.display = 'none');
+            document.getElementById('main-buttons').style.display = 'flex';
+        }
+
+        function saveChecklist() {
+            let items = document.querySelectorAll('#itinerary-9 input[type="checkbox"]');
+            let checklist = {};
+            items.forEach((item, index) => {
+                checklist['item' + (index + 1)] = item.checked;
+            });
+            localStorage.setItem('checklist', JSON.stringify(checklist));
+        }
+
+        function loadChecklist() {
+            let checklist = JSON.parse(localStorage.getItem('checklist')) || {};
+            let items = document.querySelectorAll('#itinerary-9 input[type="checkbox"]');
+            items.forEach((item, index) => {
+                item.checked = checklist['item' + (index + 1)] || false;
+                item.addEventListener('change', saveChecklist);
+            });
+        }
+
+        window.onload = loadChecklist;
+    </script>
+</body>
+
+</html>
