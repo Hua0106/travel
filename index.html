@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>東京自由行8天7夜</title>
+    <title>東京自由行</title>
     <style>
+        
         body {
             font-family: "Microsoft JhengHei", Arial, sans-serif;
             margin: 20px;
@@ -23,10 +24,36 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        h2,
-        h3 {
+        h2,h3 {
             text-align: center;
             /* 標題與副標題都置中 */
+        }
+
+        .place-container {
+            border: 2px solid #ff6f61; /* 加框 */
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #fff5f5; /* 淺粉色背景 */
+            margin-bottom: 20px;
+        }
+
+        .place {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .hours {
+            margin-top: 5px;
+            color: #333;
+        }
+
+        .address a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .address a:hover {
+            text-decoration: underline;
         }
 
         .button-container {
@@ -70,29 +97,38 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
+            margin-top: 12px;
         }
 
         th,
         td {
-            border: 1px solid #ddd;
-            padding: 10px;
+            border: 1px solid #ccc;
+            padding: 8px;
             text-align: center;
         }
 
         th {
-            background-color: #8ddfff;
-            color: #fff;
+            background-color: #ff6f61;
+            color: white;
         }
 
         tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: #ffffff;
         }
 
         .back-container {
             text-align: center;
             /* 讓返回按鈕置中 */
             margin-top: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
         .back-btn {
@@ -116,14 +152,14 @@
             background-color: #ff4848;
             color: #fff;
         }
+    
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h2>東京自由行8天7夜</h2>
-
-        <div class="button-container" id="main-buttons">
+        <h2>東京自由行</h2>
+        <div class="button-container" id="main-buttons" style="display: flex;">
             <button class="day-btn" onclick="showItinerary(9)">行李清單</button>
             <button class="day-btn" onclick="showItinerary(10)">花費清單</button>
             <button class="day-btn" onclick="showItinerary(1)">第一天</button>
@@ -135,20 +171,24 @@
             <button class="day-btn" onclick="showItinerary(7)">第七天</button>
             <button class="day-btn" onclick="showItinerary(8)">第八天</button>
         </div>
+    </div>
+        
         <div id="itinerary-9" class="itinerary">
             <h3>行李清單</h3>
-            <ul>
-                <li><input type="checkbox" id="item1"> 護照 & 身分證</li>
-                <li><input type="checkbox" id="item2"> 外幣 & 信用卡</li>
-                <li><input type="checkbox" id="item3"> 換洗衣物</li>
-                <li><input type="checkbox" id="item4"> 充電器 & 行動電源</li>
-                <li><input type="checkbox" id="item5"> 盥洗用品</li>
-                <li><input type="checkbox" id="item6"> 個人藥品</li>
-            </ul>
-            <div class="back-container">
-                <button class="back-btn" onclick="backToMain()">返回</button>
-            </div>
+                <ul>
+                    <li><input type="checkbox" id="item1"> 護照 & 身分證</li>
+                    <li><input type="checkbox" id="item2"> 外幣 & 信用卡</li>
+                    <li><input type="checkbox" id="item3"> 換洗衣物</li>
+                    <li><input type="checkbox" id="item4"> 充電器 & 行動電源</li>
+                    <li><input type="checkbox" id="item5"> 盥洗用品</li>
+                    <li><input type="checkbox" id="item6"> 個人藥品</li>
+                </ul>
+        <!-- 保留下方的返回鍵 -->
+        <div class="back-container" style="text-align: center;">
+            <button class="back-btn" onclick="backToMain()">返回</button>
         </div>
+        </div>
+    
 
         <div id="itinerary-10" class="itinerary">
             <h3>花費清單</h3>
@@ -156,7 +196,7 @@
                 <thead>
                     <tr>
                         <th>項目</th>
-                        <th>費用（台幣/日幣）</th>
+                        <th>費用</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -202,37 +242,91 @@
                     <tr>
                         <th>時間</th>
                         <th>行程</th>
-                        <th>交通</th>
                         <th>備註</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>13:00-17:35</td>
-                        <td>🛫KHH➡️🛬NRT</td>
-                        <td>中華航空</td>
+                        <td>🛫KHH<br>⬇️</br>🛬NRT</td>
                         <td>飛機餐</td>
                     </tr>
                     <tr>
                         <td>15:00-19:20</td>
-                        <td>🛫TPE➡️🛬NRT</td>
-                        <td>星宇航空</td>
+                        <td>🛫TPE<br>⬇️</br>🛬NRT</td>
                         <td>飛機餐</td>
                     </tr>
                     <tr>
                         <td>20:30-21:30</td>
-                        <td>成田機場➡️南千住民宿</td>
-                        <td>Skyliner➕JJ(常磐線)成田</td>
+                        <td>成田機場<br>⬇️</br>民宿</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>21:40-00:00</td>
                         <td>吃晚餐</td>
                         <td>-</td>
-                        <td>民宿附近解決</td>
                     </tr>
                 </tbody>
             </table>
+            <h2>📍 民宿地址</h2>
+            <div class="place-container">
+                    <p class="address">
+                    📍 地址：<a href="https://www.google.com/maps?q=2-chōme-4-7+Nihonzutsumi,+Taito+City,+Tokyo+111-0021,+Japan" target="_blank">
+                        2-chōme-4-7 Nihonzutsumi, Taito City, Tokyo 111-0021 日本
+                    </a>
+                </p>
+            </div>
+            <h2>📍 南千住宵夜</h2>
+            <div class="place-container">
+                <h3>🍜 拉麵 & 串燒 </h3>
+                <div class="place">
+                    <strong>蒙古タンメン中本（蒙古湯麵中本） 🌶️🔥（辛辣系）</strong> 
+                    <li>東京知名的辣味味噌拉麵，宵夜時段超人氣！</li>
+                    <li>推薦：蒙古湯麵（辛辣味噌拉麵）、味噌蛋花湯</li>                     
+                    <p class="hours">營業時間：11:00 - 21:30</p>
+                </div>
+                <div class="place">
+                    <strong>串カツ田中 南千住店（串炸田中） 🍢</strong> 
+                    <li>大阪風味串炸專門店，適合邊吃邊喝的深夜美食</li>
+                    <li>牛肉串炸、起司串、炸章魚丸</li>                     
+                    <p class="hours">16:00 - 24:00（週末延長至 25:00）</p>
+                </div>
+            </div>
+            <div class="place-container">
+                <h3>🍛 定食 & 居家風宵夜 </h3>
+                <div class="place">
+                    <strong>吉野家 / すき家 / 松屋（連鎖牛丼） 🍚</strong> 
+                    <li>24 小時營業，牛丼、咖哩飯是宵夜好選擇</li>
+                </div>
+                <div class="place">
+                    <strong>大黒屋（天丼專門店） 🍤</strong> 
+                    <li>老字號天丼店，深夜吃炸蝦飯超滿足！</li>                   
+                    <p class="hours">營業時間：11:00 - 23:00</p>
+                </div>
+            </div>
+            <div class="place-container">
+                <h3>🍣 居酒屋 & 居酒屋料理</h3>
+                <div class="place">
+                    <strong>大衆酒場 ちばチャン（千葉ちゃん酒場） 🍻</strong> 
+                    <li>平價居酒屋，適合晚餐或宵夜時段來喝一杯</li>
+                    <li>推薦：炒麵、炸雞、味噌煮牛筋</li>                     
+                    <p class="hours">營業時間：16:00 - 24:00/p>
+                </div>
+                <div class="place">
+                    <strong>魚がし日本一（立食壽司） 🍣</strong> 
+                    <li>平價新鮮壽司，快速方便的宵夜選擇</li>                    
+                    <p class="hours">營業時間：11:00 - 22:00</p>
+                </div>
+            </div>
+            <h3>📌 MEMO</h3>
+                <textarea id="note" placeholder="請輸入..."></textarea>
+
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">💾 儲存</button>
+                <button onclick="clearData()">🗑 清除</button>
+            </div>
+
             <div class="back-container">
                 <button class="back-btn" onclick="backToMain()">返回</button>
             </div>
@@ -245,61 +339,183 @@
                     <tr>
                         <th>時間</th>
                         <th>行程</th>
-                        <th>交通</th>
                         <th>備註</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>08:50-09:10</td>
-                        <td>南千住➡️東京車站</td>
-                        <td>JJ(常磐線)品川</td>
+                        <td>南千住<br>⬇️</br>東京車站</td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>09:25-10:15</td>
-                        <td>八重洲B2(12號)公車站➡️木更津OUTLET</td>
-                        <td>木更津 接駁車</td>
+                        <td>八重洲B2(12號)<br>⬇️</br>木更津OUTLET</td>
                         <td>車票 ¥1500</td>
                     </tr>
                     <tr>
                         <td>20:30-21:20</td>
-                        <td>木更津OUTLET➡️八重洲B2(12號)公車站</td>
-                        <td>木更津 接駁車</td>
+                        <td>木更津OUTLET<br>⬇️</br>八重洲B2(12號)</td>
                         <td>車票 ¥1500</td>
                     </tr>
                     <tr>
                         <td>-</td>
                         <td>吃晚餐</td>
-                        <td>-</td>
                         <td>東京車站B1</td>
                     </tr>
                     <tr>
                         <td>-</td>
-                        <td>東京車站➡️南千住</td>
-                        <td>JJ(常磐線)成田</td>
+                        <td>東京車站<br>⬇️</br>南千住</td>
                         <td>-</td>
                     </tr>
                 </tbody>
             </table>
-            <table>
-                <thead>
-                    <tr>
-                        <th>美食</th>
-                        <th>備註</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>月島文字燒 Tamatoya</td>
-                        <td>東京車站B1</td>
-                    </tr>
-                    <tr>
-                        <td>壽壽木 炸豬排</td>
-                        <td>東京車站B1</td>
-                    </tr>
-                </tbody>
-            </table>
+
+            <h2>📍 東京車站早餐推薦 🍞☕🥐</h2>
+            <div class="place-container">
+                <h3>🍞 麵包 & 輕食</h3>
+                <div class="place">
+                    <strong>BURDIGALA EXPRESS（東京車站內） 🥖☕</strong>
+                    <li>
+                        來自法國的高級烘焙坊，招牌可頌、巧克力麵包超受歡迎！
+                    </li>
+                    <li>
+                        推薦：巧克力可頌、法式吐司、濃湯套餐
+                    </li>                    
+                    <p class="hours">營業時間：07:00 - 22:00</p>
+                </div>
+                <div class="place">
+                    <strong>DeliFrance（東京車站八重洲南口） 🥐🥪</strong>
+                    <li>
+                        適合趕時間的旅客，提供現烤可頌、三明治、咖啡
+                    </li>
+                    <li>
+                        推薦：起司火腿可頌、燻鮭魚三明治、拿鐵咖啡
+                    </li>                    
+                    <p class="hours">營業時間：07:00 - 21:00</p>
+                </div>
+            </div>
+            <div class="place-container">
+                <h3>🍚 日式早餐</h3>  
+                <div class="place">
+                    <strong>つじ半（Tsujihan）海鮮丼 🍣</strong>
+                    <li>
+                        早餐來份豪華的海鮮丼，CP值超高！
+                    </li>
+                    <li>
+                        推薦：海鮮丼（並/上/特上），湯底可以加茶泡飯
+                    </li>
+                    <p class="hours">營業時間：08:00 - 21:00</p>
+                </div>
+                <div class="place">
+                    <strong>ねんりん家（年輪家） 🥞（年輪蛋糕專門店）</strong>
+                    <li>
+                        以外帶為主，推薦當伴手禮或快速吃點心
+                    </li>
+                    <p class="hours">營業時間：08:00 - 21:00）</p>
+                </div>
+            </div>
+            
+            <h2>📍 木更津OUTLET 美食推薦 🍔🍜🍩</h2>
+            <div class="place-container">
+                <h3>🍜 日式料理 </h3>
+                <div class="place">
+                    <strong>BURDIGALA>Tonkatsu Wako（和幸豬排） 🥩</strong>
+                        <li>
+                            超人氣炸豬排店，外酥內嫩，白飯、高麗菜可續加
+                        </li>
+                        <li>
+                            推薦：特選炸豬排定食、里肌豬排套餐
+                        </li>                                                            
+                        <p class="hours">營業時間：11:00 - 21:00</p>
+                </div>
+                <div class="place">
+                    <strong>SABAR（鯖魚料理專門店） 🐟</strong>
+                    <li>
+                        以鯖魚為主的特色日式料理店
+                    </li>
+                    <li>
+                        推薦：鯖魚定食、鯖魚壽司、鯖魚刺身
+                    </li>
+                    <p class="hours">營業時間：11:00 - 21:00</p>
+                </div>
+            </div>
+
+            <div class="place-container">
+                <h3>🍔 異國料理 & 輕食 </h3>
+                <div class="place">
+                    <strongBURDIGALA>KUA`AINA（夏威夷漢堡） 🍔</strong>
+                        <li>
+                            來自夏威夷的漢堡名店，牛肉多汁、分量十足
+                        </li>
+                        <li>
+                            推薦：起司牛肉漢堡、酪梨牛肉堡
+                        </li>                                                            
+                        <p class="hours">營業時間：11:00 - 21:00</p>
+                </div>
+                <div class="place">
+                    <strong>Starbucks（星巴克） 🍵</strong>
+                    <li>
+                        木更津OUTLET 內的星巴克，適合休息、喝咖啡
+                    </li>
+                    <li>
+                        推薦：拿鐵、焦糖瑪奇朵、抹茶拿鐵
+                    </li>
+                    <p class="hours">營業時間：11:00 - 21:00</p>
+                </div>
+                <div class="place">
+                    <strong>GODIVA（巧克力霜淇淋） 🍫🍦</strong>
+                    <li>
+                        逛街累了來支濃郁的巧克力霜淇淋！
+                    </li>
+                    <p class="hours">營業時間：10:00 - 20:00</p>
+                </div>
+            </div>            
+            
+            <h2>📍 東京車站</h2>
+            <div class="place-container">
+                <h3>🍜 拉麵 </h3>
+                <div class="place">
+                    <strong>六厘舍（濃厚魚介沾麵）</strong>                    
+                    <p class="hours">營業時間：07:30 - 22:30（L.O. 22:00）</p>
+                </div>
+                <div class="place">
+                    <strong>斑鳩拉麵（東京醬油拉麵）</strong>
+                    <p class="hours">營業時間：10:30 - 23:00（L.O. 22:30）</p>
+                </div>
+            </div>
+            <div class="place-container">
+                <h3>🍱 和食 & 壽司</h3>  
+                <div class="place">
+                    <strong>築地壽司大（新鮮壽司）</strong>
+                    <p class="hours">營業時間：07:00 - 22:30（L.O. 22:00）</p>
+                </div>
+                <div class="place">
+                    <strong>根室花丸迴轉壽司（CP值超高）</strong>
+                    <p class="hours">營業時間：11:00 - 22:00（L.O. 21:30）</p>
+                </div>
+            </div>
+            <div class="place-container">
+                    <h3>🍛 咖哩 & 丼飯</h3> 
+                <div class="place">
+                    <strong>東京排隊咖哩「東京咖哩屋 nowBoarding」</strong>
+                    <p class="hours">營業時間：10:00 - 22:00（L.O. 21:30）</p>
+                </div>
+                <div class="place">
+                    <strong>牛かつ もと村（牛舌炸牛排）</strong>
+                    <p class="hours">營業時間：11:00 - 22:00（L.O. 21:30）</p>
+                </div>
+            </div>
+
+            <h3>📌 MEMO</h3>
+            <textarea id="note" placeholder="請輸入..."></textarea>
+
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">💾 儲存</button>
+                <button onclick="clearData()">🗑 清除</button>
+            </div>
+
             <div class="back-container">
                 <button class="back-btn" onclick="backToMain()">返回</button>
             </div>
@@ -312,144 +528,737 @@
                     <tr>
                         <th>時間</th>
                         <th>行程</th>
+                        <th>備註</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>09:00-12:00</td>
-                        <td>參觀吉卜力公園</td>
+                        <td>早上</td>
+                        <td>南千住<br>⬇️</br>淺草</td>
+                        <td>車票 ¥210</td>
                     </tr>
                     <tr>
-                        <td>15:00-18:00</td>
-                        <td>遊覽涉谷街頭</td>
+                        <td>下午</td>
+                        <td>淺草<br>⬇️</br>上野</td>
+                        <td>車票 ¥178</td>
+                    </tr>
+                    <tr>
+                        <td>晚上</td>
+                        <td>上野<br>⬇️</br>晴空塔</td>
+                        <td>車票 ¥286</td>
+                    </tr>
+                    <tr>
+                        <td>回家</td>
+                        <td>晴空塔<br>⬇️</br>南千住</td>
+                        <td>車票 ¥-</td>
                     </tr>
                 </tbody>
             </table>
+
+            <h2>📌 淺草</h2>
+        <div class="place-container">
+            <div class="place">
+                <strong>淺草寺 🏯</strong>
+                <p class="hours">營業時間：06:00 - 17:00</p>
+            </div>
+            <div class="place">
+                <strong>仲見世通 🛍️</strong>
+                <p class="hours">營業時間：商店時間不同，約09:00 - 19:00</p>
+            </div>
+            <div class="place">
+                <strong>大黑家天丼 🍤</strong>
+                <p class="hours">營業時間：11:10 - 20:30</p>
+            </div>
+            <div class="place">
+                <strong>淺草梅園 🍡</strong>
+                <p class="hours">營業時間：10:00 - 19:00</p>
+            </div>
+            <div class="place">
+                <strong>壽喜燒今半 🥩</strong>
+                <p class="hours">營業時間：11:30 - 21:30</p>
+            </div>
+            <div class="place">
+                <strong>淺草花月堂 🍈（菠蘿麵包）</strong>
+                <p class="hours">營業時間：09:00 - 17:00</p>
+            </div>
+        </div>
+            
+            <h2>📌 上野</h2>
+        <div class="place-container">
+            <div class="place">
+                <strong>上野動物園 🐼</strong>
+                <p class="hours">營業時間：09:30 - 17:00（週一公休）</p>
+            </div>
+            <div class="place">
+                <strong>阿美橫町 🛒</strong>
+                <p class="hours">營業時間：店家不同，約10:00 - 20:00</p>
+            </div>
+            <div class="place">
+                <strong>井泉本店 🍱（炸豬排）</strong>
+                <p class="hours">營業時間：11:30 - 20:30</p>
+            </div>
+            <div class="place">
+                <strong>米久本店 🥩（壽喜燒）</strong>
+                <p class="hours">營業時間：11:30 - 21:00</p>
+            </div>
+            <div class="place">
+                <strong>上野大勝軒 🍜（沾麵）</strong>
+                <p class="hours">營業時間：11:00 - 22:00</p>
+            </div>
+        </div>
+            
+            <h2>📌 晴空塔</h2>
+        <div class="place-container">
+            <div class="place">
+                <strong>東京晴空塔 🗼</strong>
+                <p class="hours">營業時間：10:00 - 21:00</p>
+            </div>
+            <div class="place">
+                <strong>東京晴空街道 🏬</strong>
+                <p class="hours">營業時間：10:00 - 21:00</p>
+            </div>
+            <div class="place">
+                <strong>六厘舍 🍜（濃厚沾麵）</strong>
+                <p class="hours">營業時間：10:30 - 22:30</p>
+            </div>
+            <div class="place">
+                <strong>世界啤酒博物館 🍺</strong>
+                <p class="hours">營業時間：11:00 - 23:00</p>
+            </div>
+            <div class="place">
+                <strong>Tokyo Milk Cheese Factory 🧀</strong>
+                <p class="hours">營業時間：10:00 - 21:00</p>
+            </div>
+            <div class="place">
+                <strong>押上甜點Totti Candy Factory 🍭</strong>
+                <p class="hours">營業時間：11:00 - 20:00</p>
+            </div>
+        </div>
+
+            <h3>📌 MEMO</h3>
+            <textarea id="note" placeholder="請輸入..."></textarea>
+
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">💾 儲存</button>
+                <button onclick="clearData()">🗑 清除</button>
+            </div>
+
             <div class="back-container">
                 <button class="back-btn" onclick="backToMain()">返回</button>
             </div>
         </div>
 
-        <div id="itinerary-3" class="itinerary">
+        <div id="itinerary-4" class="itinerary">
             <h3>第四天</h3>
             <table>
                 <thead>
                     <tr>
                         <th>時間</th>
                         <th>行程</th>
+                        <th>備註</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>09:00-12:00</td>
-                        <td>參觀吉卜力公園</td>
+                        <td>早上</td>
+                        <td>南千住<br>⬇️</br>築地市場</td>
+                        <td>車票 ¥-</td>
                     </tr>
                     <tr>
-                        <td>15:00-18:00</td>
-                        <td>遊覽涉谷街頭</td>
+                        <td>下午</td>
+                        <td>築地市場<br>⬇️</br>銀座</td>
+                        <td>車票 ¥-</td>
+                    </tr>
+                    <tr>
+                        <td>晚上</td>
+                        <td>銀座<br>⬇️</br>東京車站</td>
+                        <td>車票 ¥-</td>
+                    </tr>
+                    <tr>
+                        <td>回家</td>
+                        <td>東京車站<br>⬇️</br>南千住</td>
+                        <td>車票 ¥-</td>
                     </tr>
                 </tbody>
             </table>
+
+            <h2>📍 築地市場</h2>
+            <div class="place-container">
+                <div class="place">
+                    <strong>壽司大（築地壽司）</strong>                    
+                    <p class="hours">營業時間：05:00 - 14:00</p>
+                </div>
+                <div class="place">
+                    <strong>築地天國（炸天婦羅）</strong>
+                    <p class="hours">營業時間：09:00 - 14:00</p>
+                </div>
+                <div class="place">
+                    <strong>篩水餃（海鮮水餃）</strong>
+                    <p class="hours">營業時間：06:00 - 14:00</p>
+                </div>
+            </div>
+
+            <h2>📍 銀座</h2>
+            <div class="place-container">
+                <div class="place">
+                    <strong>銀座天國（和牛壽喜燒）</strong>                    
+                    <p class="hours">營業時間：11:30 - 22:00</p>
+                </div>
+                <div class="place">
+                    <strong>銀座一丁目角的壽司店</strong>
+                    <p class="hours">營業時間：12:00 - 22:00</p>
+                </div>
+                <div class="place">
+                    <strong>無印良品銀座店</strong>
+                </div>
+                <div class="place">
+                    <strong>銀座四丁目交叉口（繁華商圈）</strong>
+                </div>
+                <div class="place">
+                    <strong>GINZA SIX（百貨商場）</strong>
+                </div>
+            </div>
+
+            <h2>📍 東京車站</h2>
+            <div class="place-container">
+                <h3>🍞 甜點 & 伴手禮</h3>
+                <div class="place">
+                    <strong>銀之鈴（東京車站限定甜點）</strong>                    
+                    <p class="hours">營業時間：08:00 - 22:00</p>
+                </div>
+                <div class="place">
+                    <strong>Fairycake Fair（可愛杯子蛋糕）</strong>
+                    <p class="hours">營業時間：08:00 - 22:00</p>
+                </div>
+                <div class="place">
+                    <strong>東京香蕉（東京ばな奈）</strong>
+                    <p class="hours">營業時間：依據店鋪不同，大多08:00 - 22:00</p>
+                </div>
+            </div>
+
+            <h3>📌 MEMO</h3>
+            <textarea id="note" placeholder="請輸入..."></textarea>
+
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">💾 儲存</button>
+                <button onclick="clearData()">🗑 清除</button>
+            </div>
+
             <div class="back-container">
                 <button class="back-btn" onclick="backToMain()">返回</button>
             </div>
         </div>
 
-        <div id="itinerary-3" class="itinerary">
+        <div id="itinerary-5" class="itinerary">
             <h3>第五天</h3>
             <table>
                 <thead>
                     <tr>
                         <th>時間</th>
                         <th>行程</th>
+                        <th>備註</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>09:00-12:00</td>
-                        <td>參觀吉卜力公園</td>
+                        <td>早上</td>
+                        <td>南千住<br>⬇️</br>池袋</td>
+                        <td>車票 ¥210</td>
                     </tr>
                     <tr>
-                        <td>15:00-18:00</td>
-                        <td>遊覽涉谷街頭</td>
+                        <td>中午</td>
+                        <td>池袋<br>⬇️</br>豪德寺</td>
+                        <td>車票 ¥178</td>
+                    </tr>
+                    <tr>
+                        <td>下午</td>
+                        <td>豪德寺<br>⬇️</br>澀谷</td>
+                        <td>車票 ¥286</td>
+                    </tr>
+                    <tr>
+                        <td>晚上</td>
+                        <td>澀谷<br>⬇️</br>新宿</td>
+                        <td>車票 ¥286</td>
+                    </tr>
+                    <tr>
+                        <td>回家</td>
+                        <td>新宿<br>⬇️</br>南千住</td>
+                        <td>車票 ¥286</td>
                     </tr>
                 </tbody>
             </table>
+            <h2>📍 池袋</h2>
+            <div class="place-container">
+                <h3>🍽️ 必吃美食</h3>
+                <div class="place">
+                    <strong>無敵家拉麵（無敵家ラーメン）⭐</strong>
+                    <li>
+                        招牌濃厚豚骨拉麵，叉燒超大塊
+                    </li>                    
+                    <p class="hours">營業時間：10:30 - 23:00</p>
+                </div>
+                <div class="place">
+                    <strong>三田製麵所 池袋西口店</strong>
+                    <li>
+                        超人氣沾麵，麵條Q彈有嚼勁
+                    </li>
+                    <p class="hours">營業時間：11:00 - 23:00</p>
+                </div>
+                <h3>🎡 必逛景點</h3>
+                <div class="place">
+                    <strong>陽光水族館（サンシャイン水族館）</strong>
+                    <li>
+                        池袋最受歡迎的室內水族館
+                    </li>
+                    <p class="hours">營業時間：10:00 - 18:00</p>
+                </div>
+                <div class="place">
+                    <strong>NAMJATOWN 娜姆嘉樂園</strong>
+                    <li>
+                        超適合動漫迷的小型主題樂園
+                    </li>
+                </div>
+                <div class="place">
+                    <strong>BOOK AND BED TOKYO</strong>
+                    <li>
+                        書店 x 旅館的結合，拍照超美
+                    </li>
+                </div>
+            </div>
+            <h2>📍 豪德寺</h2>
+            <div class="place-container">
+                <h3>🍽️ 必吃美食</h3>
+                <div class="place">
+                    <strong>HAGI CAFE</strong>
+                    <li>
+                        特色日式咖啡店，甜點很推薦
+                    </li>                    
+                    <p class="hours">營業時間：10:00 - 18:00</p>
+                </div>
+                <div class="place">
+                    <strong>LA VIEILLE FRANCE</strong>
+                    <li>
+                        豪德寺超人氣法式甜點店
+                    </li>
+                    <p class="hours">營業時間：10:00 - 19:00</p>
+                </div>
+                <h3>🎡 必逛景點</h3>
+                <div class="place">
+                    <strong>豪德寺（招財貓寺）⭐</strong>
+                    <li>
+                        這裡是日本招財貓的發源地！
+                    </li>
+                    <p class="hours">營業時間：06:00 - 18:00</p>
+                </div>
+                <div class="place">
+                    <strong>世田谷線沿線散策</strong>
+                    <li>
+                        乘坐復古的世田谷線，沿途有很多特色小店
+                    </li>
+                </div>                
+            </div>
+            <h2>📍 澀谷</h2>
+            <div class="place-container">
+                <h3>🍽️ 必吃美食</h3>
+                <div class="place">
+                    <strong>牛かつ もと村（牛舌炸牛排）⭐</strong>
+                    <li>
+                        超人氣炸牛排店，外脆內嫩
+                    </li>                    
+                    <p class="hours">營業時間：11:00 - 22:00</p>
+                </div>
+                <div class="place">
+                    <strong>TORO 渋谷</strong>
+                    <li>
+                        道地的墨西哥料理，氣氛很好
+                    </li> 
+                    <p class="hours">營業時間：11:30 - 23:00</p>
+                </div>
+                <div class="place">
+                    <strong>幸也寿司</strong>
+                    <li>
+                        網美系壽司，擺盤超美
+                    </li> 
+                    <p class="hours">營業時間：17:00 - 23:00</p>
+                </div>
+                <h3>🎡 必逛景點</h3>
+                <div class="place">
+                    <strong>澀谷天空 SHIBUYA SKY ⭐</strong>
+                    <li>
+                        澀谷最高樓頂，可以360度俯瞰東京夜景
+                    </li> 
+                </div>
+                <div class="place">
+                    <strong>SHIBUYA 109</strong>
+                    <li>
+                        澀谷最有名的時尚購物中心
+                    </li> 
+                </div>
+                <div class="place">
+                    <strong>宮下公園 & MIYASHITA PARK</strong>
+                    <li>
+                        網美打卡新熱點，結合公園與購物中心
+                    </li> 
+                </div>                 
+            </div>
+            <h2>📍 新宿</h2>
+            <div class="place-container">
+                <h3>🍽️ 必吃美食</h3>
+                <div class="place">
+                    <strong>利久牛舌（ねぎし）⭐</strong>
+                    <li>
+                        招牌炭燒牛舌，Q彈多汁
+                    </li>                    
+                    <p class="hours">營業時間：11:00 - 23:00</p>
+                </div>
+                <div class="place">
+                    <strong>新宿思い出横丁（思い出橫丁居酒屋）</strong>
+                    <li>
+                        一整排日式居酒屋，氣氛超棒
+                    </li>
+                </div>
+                <div class="place">
+                    <strong>風雲児（超濃郁沾麵）</strong>
+                    <li>
+                        沾麵界的傳奇，超濃魚介湯頭
+                    </li>
+                    <p class="hours">營業時間：11:00 - 21:00</p>
+                </div>
+                <h3>🎡 必逛景點</h3>
+                <div class="place">
+                    <strong>東京都廳展望台 ⭐（免費）</strong>
+                        <li>
+                            45樓免費看東京夜景
+                        </li>
+                </div>
+                <div class="place">
+                    <strong>歌舞伎町一番街</strong>
+                        <li>
+                            新宿最熱鬧的娛樂區，適合夜晚來逛
+                        </li>
+                </div>
+                <div class="place">
+                    <strong>新宿御苑</strong>
+                        <li>
+                            超美的日式庭園，春天賞櫻最佳地點
+                        </li>
+                </div>                 
+            </div>
+
+            <h3>📌 MEMO</h3>
+            <textarea id="note" placeholder="請輸入..."></textarea>
+
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">💾 儲存</button>
+                <button onclick="clearData()">🗑 清除</button>
+            </div>
+            
             <div class="back-container">
                 <button class="back-btn" onclick="backToMain()">返回</button>
             </div>
         </div>
 
-        <div id="itinerary-3" class="itinerary">
+        <div id="itinerary-6" class="itinerary">
             <h3>第六天</h3>
             <table>
                 <thead>
                     <tr>
                         <th>時間</th>
                         <th>行程</th>
+                        <th>備註</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>09:00-12:00</td>
-                        <td>參觀吉卜力公園</td>
+                        <td>早上</td>
+                        <td>南千住<br>⬇️</br>原宿</td>
+                        <td>車票 ¥210</td>
                     </tr>
                     <tr>
-                        <td>15:00-18:00</td>
-                        <td>遊覽涉谷街頭</td>
+                        <td>中午</td>
+                        <td>原宿<br>⬇️</br>御臺場</td>
+                        <td>車票 ¥178</td>
+                    </tr>
+                    <tr>
+                        <td>下午</td>
+                        <td>御臺場<br>⬇️</br>新浦安</td>
+                        <td>車票 ¥286</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>新浦安<br>⬇️</br>三井花園酒店</td>
+                        <td>-</td>
                     </tr>
                 </tbody>
             </table>
+            <h2>📍 原宿</h2>
+            <div class="place-container">
+                <h3>🍽️ 必吃美食</h3>
+                <div class="place">
+                    <strong>Eggs ‘n Things 原宿店 🍳（夏威夷風早午餐）⭐</strong>
+                    <li>
+                        鬆餅、班尼迪克蛋超受歡迎
+                    </li>                    
+                    <p class="hours">營業時間：09:00 - 21:00</p>
+                </div>
+                <div class="place">
+                    <strong>野口鮮魚店（生魚片丼） 🐟</strong>
+                    <li>
+                        CP值超高的海鮮丼，米飯Q彈
+                    </li>
+                    <p class="hours">營業時間：11:30 - 14:00</p>
+                </div>
+                <div class="place">
+                    <strong>竹下通り的可麗餅（Marion Crepes / Angel’s Heart） 🍓</strong>
+                    <li>
+                        竹下通最具代表性的街頭甜點
+                    </li>
+                    <p class="hours">營業時間：10:00 - 21:00</p>                    
+                </div>
+                <div class="place">
+                    <strong>Luke’s Lobster（龍蝦三明治） 🦞</strong>
+                    <li>
+                        美式龍蝦三明治，料超多
+                    </li>
+                    <p class="hours">營業時間：11:00 - 20:30</p>                    
+                </div>
+                <h3>🎡 必逛景點</h3>
+                <div class="place">
+                    <strong>竹下通 ⭐</strong>
+                        <li>
+                            原宿最熱鬧的年輕潮流街區
+                        </li>
+                </div>
+                <div class="place">
+                    <strong>明治神宮</strong>
+                        <li>
+                            繁華都市中的寧靜神社
+                        </li>
+                </div>
+                <div class="place">
+                    <strong>表參道</strong>
+                        <li>
+                            逛精品、選物店的好去處
+                        </li>
+                </div>
+                <div class="place">
+                    <strong>LINE FRIENDS STORE 原宿</strong>
+                        <li>
+                            喜歡熊大、兔兔的人必逛
+                        </li>
+                </div>                 
+            </div>
+            <h2>📍 御台場</h2>
+            <div class="place-container">
+                <h3>🍽️ 必吃美食</h3>
+                <div class="place">
+                    <strong>Bills Odaiba（世界第一的鬆餅） 🥞⭐</strong>
+                    <li>
+                        超人氣鬆餅，來東京一定要試一次
+                    </li>                    
+                    <p class="hours">營業時間：08:30 - 21:00</p>
+                </div>
+                <div class="place">
+                    <strong>大江戶温泉物語 美食區 🍣</strong>
+                    <li>
+                        在溫泉設施內享受地道日式料理
+                    </li>
+                    <p class="hours">營業時間：11:00 - 23:00</p>
+                </div>
+                <div class="place">
+                    <strong>台場一丁目商店街（復古小吃街）</strong>
+                    <li>
+                        有很多復古風的日本零食 & 小吃
+                    </li>                   
+                </div>
+                <h3>🎡 必逛景點</h3>
+                <div class="place">
+                    <strong>DiverCity Tokyo Plaza & 獨角獸鋼彈 🤖⭐</strong>
+                        <li>
+                            18公尺高的變形獨角獸鋼彈像
+                        </li>
+                </div>
+                <div class="place">
+                    <strong>teamLab Borderless（沉浸式數位藝術） 🎨</strong>
+                        <li>
+                            必訪的超美光影藝術展
+                        </li>
+                </div>
+                <div class="place">
+                    <strong>富士電視台球形觀景台</strong>
+                        <li>
+                            俯瞰御台場海景的好去處
+                        </li>
+                </div>
+                <div class="place">
+                    <strong>AQUA CITY ODAIBA</strong>
+                        <li>
+                            大型購物中心，有許多餐廳 & 伴手禮店
+                        </li>
+                </div>                 
+            </div>
+            <h2>📍 新浦安</h2>
+            <div class="place-container">
+                <h3>🍽️ 必吃美食</h3>
+                <div class="place">
+                    <strong>Starbucks 舞浜 イクスピアリ店 ☕</strong>
+                    <li>
+                        舞濱站旁的特色星巴克，有迪士尼風格
+                    </li>
+                </div>
+                <div class="place">
+                    <strong>KUA`AINA（夏威夷漢堡） 🍔</strong>
+                    <li>
+                        來自夏威夷的漢堡店，口感超厚實
+                    </li>
+                </div>
+                <h3>🎡 必逛景點</h3>
+                <div class="place">
+                    <strong>迪士尼商店（迪士尼周邊） 🏰⭐</strong>
+                        <li>
+                            就算不進樂園，也可以在這裡買迪士尼商品
+                        </li>
+                </div>
+                <div class="place">
+                    <strong>IKSPIARI（購物 & 美食） 🛍️</strong>
+                        <li>
+                            東京迪士尼樂園外的大型購物中心
+                        </li>
+                </div>                                 
+            </div>
+
+            <h3>📌 MEMO</h3>
+            <textarea id="note" placeholder="請輸入..."></textarea>
+
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">💾 儲存</button>
+                <button onclick="clearData()">🗑 清除</button>
+            </div>
+            
             <div class="back-container">
                 <button class="back-btn" onclick="backToMain()">返回</button>
             </div>
         </div>
-
-        <div id="itinerary-3" class="itinerary">
+        
+        <div id="itinerary-7" class="itinerary">
             <h3>第七天</h3>
             <table>
                 <thead>
                     <tr>
                         <th>時間</th>
                         <th>行程</th>
+                        <th>備註</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>09:00-12:00</td>
-                        <td>參觀吉卜力公園</td>
+                        <td>06:00</td>
+                        <td>三井花園酒店<br>⬇</br>東京迪士尼</td>
+                        <td>接駁車<br>06:45、55</br></td>
                     </tr>
                     <tr>
-                        <td>15:00-18:00</td>
-                        <td>遊覽涉谷街頭</td>
+                        <td>晚上</td>
+                        <td>東京迪士尼<br>⬇</br>三井花園酒店</td>
+                        <td>接駁車<br>(10分鐘一班)</br></td>
                     </tr>
                 </tbody>
             </table>
+            <h2>🎢 遊玩攻略</h2>
+            <div class="place-container">
+                <div class="place">
+                    <strong>🎟 建議提早入園，8:00 開園前30-60分鐘抵達！</strong><br>
+                    <strong> 善用迪士尼官方App，查看設施等候時間、餐廳排隊狀況。</strong>
+                    <ul>
+                        <li>08:00 - 09:00 搶先玩「美女與野獸」等熱門設施</li>
+                        <li>10:00 - 12:00 探索「加勒比海盜」、「幽靈公館」，與迪士尼角色拍照</li>
+                        <li>12:00 - 13:00 午餐（推薦：藍灣餐廳 / 莎拉奶奶的廚房）</li>
+                        <li>13:30 - 15:30 下午玩設施（太空山、大雷山等）& 休閒時間</li>
+                        <li>15:30 - 17:00 欣賞「迪士尼星光巡遊」</li>
+                        <li>17:00 - 19:00 晚餐（推薦：卡拉奇餐廳 / 花花公子餐廳）</li>
+                        <li>19:00 - 22:00 晚間表演「迪士尼幻想花火」</li>
+                    </ul>
+
+                </div>
+            </div>
+            <h2>🍕 必吃美食</h2>
+            <div class="place-container">
+                <div class="place">
+                    <strong>迪士尼園區內的美食</strong>
+                    <ul>
+                        <li>米奇形狀的華夫餅：園區內人氣小食，特別適合拍照。</li>
+                        <li>火腿三明治：園內各大餐廳都提供，非常適合快速用餐。</li>
+                        <li>糖葫蘆：讓你重溫童年的美好，甜美的口感很有特色。</li>
+                        <li>迪士尼獨特的冰淇淋：提供多種口味，十分可愛，造型和味道都讓人回味。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>📌 MEMO</h3>
+            <textarea id="note" placeholder="請輸入..."></textarea>
+
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">💾 儲存</button>
+                <button onclick="clearData()">🗑 清除</button>
+            </div>
+            
             <div class="back-container">
                 <button class="back-btn" onclick="backToMain()">返回</button>
             </div>
-        </div>
+        </div>      
 
-        <div id="itinerary-3" class="itinerary">
+        <div id="itinerary-8" class="itinerary">
             <h3>第八天</h3>
             <table>
                 <thead>
                     <tr>
                         <th>時間</th>
                         <th>行程</th>
+                        <th>備註</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>09:00-12:00</td>
-                        <td>參觀吉卜力公園</td>
+                        <td>10:30</td>
+                        <td>三井花園酒店<br>⬇️</br>酒酒井</td>
+                        <td>-</td>
                     </tr>
                     <tr>
-                        <td>15:00-18:00</td>
-                        <td>遊覽涉谷街頭</td>
+                        <td>16:30</td>
+                        <td>酒酒井<br>⬇️</br>成田機場</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>18:35-21:45</td>
+                        <td>🛬NRT<br>⬇️</br>🛫KHH</td>
+                        <td>飛機餐</td>
+                    </tr>
+                    <tr>
+                        <td>18:30</td>
+                        <td>酒酒井<br>⬇️</br>成田機場</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>20:40-23:20</td>
+                        <td>🛬NRT<br>⬇️</br>🛫TPE</td>
+                        <td>飛機餐</td>
                     </tr>
                 </tbody>
             </table>
+            
+            <h3>📌 MEMO</h3>
+            <textarea id="note" placeholder="請輸入..."></textarea>
+
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">💾 儲存</button>
+                <button onclick="clearData()">🗑 清除</button>
+            </div>
+            
             <div class="back-container">
                 <button class="back-btn" onclick="backToMain()">返回</button>
             </div>
@@ -458,6 +1267,7 @@
     </div>
 
     <script>
+        
         function showItinerary(day) {
             document.getElementById('main-buttons').style.display = 'none';
             document.querySelectorAll('.itinerary').forEach(it => it.style.display = 'none');
@@ -488,6 +1298,64 @@
         }
 
         window.onload = loadChecklist;
+
+        document.addEventListener("DOMContentLoaded", function () {
+        loadData(); // 頁面載入時讀取資料
+        });
+
+        // 讀取 localStorage 的資料
+        function loadData() {
+        // 讀取備註內容
+        let noteField = document.querySelector("#note");
+            if (noteField) {
+                noteField.value = localStorage.getItem("userNote") || "";
+            }
+
+        // 讀取行程表內容
+        document.querySelectorAll("td[contenteditable='true']").forEach((cell, index) => {
+            let savedValue = localStorage.getItem(`tableCell-${index}`);
+            if (savedValue !== null) {
+                cell.innerText = savedValue;
+        }
+            });
+        }
+
+                // 儲存行程表 & 備註
+        function saveData() {
+            // 儲存備註內容
+            let noteField = document.querySelector("#note");
+            if (noteField) {
+                localStorage.setItem("userNote", noteField.value);
+            }
+
+            // 儲存行程表內容
+        document.querySelectorAll("td[contenteditable='true']").forEach((cell, index) => {
+        localStorage.setItem(`tableCell-${index}`, cell.innerText.trim());
+            });
+
+            alert("✅ 儲存成功！");
+        }
+
+        // 清除行程表 & 備註
+        function clearData() {
+            if (confirm("⚠ 確定要清除所有內容嗎？")) {
+                // 清除備註
+                let noteField = document.querySelector("#note");
+                if (noteField) {
+                    localStorage.removeItem("userNote");
+                    noteField.value = "";
+                }
+
+                // 清除行程表內容
+                document.querySelectorAll("td[contenteditable='true']").forEach((cell, index) => {
+                    localStorage.removeItem(`tableCell-${index}`);
+                    cell.innerText = "";
+                });
+
+                alert("🗑️ 已刪除！");
+    }
+}
+    
     </script>
 </body>
 
