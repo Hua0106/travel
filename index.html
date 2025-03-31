@@ -298,7 +298,7 @@
         }
 
         .timeline {
-            border-left: 4px solid #4CAF50;
+            border-left: 4px solid #ff4d7f;
             padding-left: 20px;
             margin-left: 10px;
         }
@@ -320,7 +320,7 @@
 
         .time {
             font-weight: bold;
-            color: #4CAF50;
+            color: #ff4d7f;
         }
     </style>
 </head>
@@ -419,15 +419,39 @@
                 <span class="time">15:00-19:20</span> - 🛫TPE > 🛬NRT
             </div>
             <div class="event">
-                <span class="time">20:34</span> - 搭乘skyliner前往日暮里
+                <span class="time">20:34-21:13</span> - 搭乘skyliner前往日暮里
             </div>
             <div class="event">
-                <span class="time">21:37-21:56</span> - 日暮里>JJ常磐線>南千住
+                <span class="time">21:37-21:56</span> - 日暮里>南千住
             </div>
             <div class="event">
-                <span class="time">22:20</span> - 抵達民宿
+                <span class="time">22:20</span> - 抵達民宿、吃晚餐
             </div>
         </div>
+
+        <h2>📍 skyliner時刻表</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>成田機場第2･第3候機樓</th>
+                    <th>日暮里</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>20:34</td>
+                    <td>21:13</td>
+                </tr>
+                <tr>
+                    <td>21:03</td>
+                    <td>21:42</td>
+                </tr>
+                <tr>
+                    <td>21:23</td>
+                    <td>22:04</td>
+                </tr>
+            </tbody>
+        </table>
 
         <h2>📍 民宿地址</h2>
         <div class="place-container">
@@ -438,9 +462,8 @@
                     2-chōme-4-7 Nihonzutsumi, Taito City, Tokyo 111-0021 日本
                 </a>
             </p>
-            <img src="C:\Users\amy55\OneDrive\文件\GitHub\travel\skyliner時刻表.png" alt="skyliner時刻表">
-
         </div>
+
         <h2>📍 南千住宵夜</h2>
         <div class="place-container">
             <h3>🍜 拉麵 & 串燒 </h3>
@@ -493,7 +516,6 @@
             </div>
         </div>
 
-
         <!-- 這裡是上下頁和返回選單按鈕 -->
         <div class="navigation-btn-container">
             <button class="prev-btn" onclick="showItinerary(8)">上一頁</button>
@@ -503,43 +525,26 @@
     </div>
 
     <div id="itinerary-2" class="itinerary" style="display: none;">
-        <h3>第二天</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>時間</th>
-                    <th>行程</th>
-                    <th>備註</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>08:50-09:10</td>
-                    <td>南千住<br>⬇️</br>東京車站</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>09:25-10:15</td>
-                    <td>八重洲B2(12號)<br>⬇️</br>木更津OUTLET</td>
-                    <td>車票 ¥1500</td>
-                </tr>
-                <tr>
-                    <td>20:30-21:20</td>
-                    <td>木更津OUTLET<br>⬇️</br>八重洲B2(12號)</td>
-                    <td>車票 ¥1500</td>
-                </tr>
-                <tr>
-                    <td>-</td>
-                    <td>吃晚餐</td>
-                    <td>東京車站B1</td>
-                </tr>
-                <tr>
-                    <td>-</td>
-                    <td>東京車站<br>⬇️</br>南千住</td>
-                    <td>-</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="timeline">
+            <div class="day">Day 2 - 木更津outlet</div>
+            <div class="event">
+                <span class="time">08:50-09:10</span> - 南千住>東京車站
+            </div>
+            <div class="event">
+                <span class="time">09:25</span> - 八重洲B2(12號)>木更津OUTLET
+                <li>車票1500</li>
+            </div>
+            <div class="event">
+                <span class="time">20:30</span> - 木更津OUTLET>八重洲B2(12號)
+                <li>車票1500</li>
+            </div>
+            <div class="event">
+                <span class="time">21:20-22:30</span> - 東京車站B1(吃晚餐)
+            </div>
+            <div class="event">
+                <span class="time">22:30</span> - 東京車站>南千住
+            </div>
+        </div>
 
         <h2>📍 東京車站早餐推薦 🍞☕🥐</h2>
         <div class="place-container">
@@ -677,13 +682,14 @@
             </div>
         </div>
 
-        <h3>📌 MEMO</h3>
-        <textarea id="note" placeholder="請輸入..."></textarea>
-
-        <!-- 按鈕 -->
-        <div class="btn-container">
-            <button onclick="saveData()">儲存</button>
-            <button onclick="clearData()">清除</button>
+        <div class="place-container">
+            <h3>📌 MEMO</h3>
+            <textarea id="note" placeholder="請輸入..."></textarea>
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">儲存</button>
+                <button onclick="clearData()">清除</button>
+            </div>
         </div>
 
         <!-- 這裡是上下頁和返回選單按鈕 -->
@@ -695,38 +701,39 @@
     </div>
 
     <div id="itinerary-3" class="itinerary" style="display: none;">
-        <h3>第三天</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>時間</th>
-                    <th>行程</th>
-                    <th>備註</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>早上</td>
-                    <td>南千住<br>⬇️</br>淺草</td>
-                    <td>車票 ¥210</td>
-                </tr>
-                <tr>
-                    <td>下午</td>
-                    <td>淺草<br>⬇️</br>上野</td>
-                    <td>車票 ¥178</td>
-                </tr>
-                <tr>
-                    <td>晚上</td>
-                    <td>上野<br>⬇️</br>晴空塔</td>
-                    <td>車票 ¥286</td>
-                </tr>
-                <tr>
-                    <td>回家</td>
-                    <td>晴空塔<br>⬇️</br>南千住</td>
-                    <td>車票 ¥-</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="timeline">
+            <div class="day">Day 3 - 淺草→上野→晴空塔→秋葉原</div>
+            <div class="event">
+                <span class="time">08:50</span> - 南千住>淺草站
+            </div>
+            <div class="event">
+                <span class="time">09:25</span> - 早餐-淺草晨食屋
+            </div>
+            <div class="event">
+                <span class="time">10:30</span> - 淺草雷門/淺草寺/仲見世商店街
+            </div>
+            <div class="event">
+                <span class="time">12:00</span> - 前往晴空塔 經過隅田川
+            </div>
+            <div class="event">
+                <span class="time">12:30</span> - 午餐 六厘舍（濃厚魚介沾麵）
+            </div>
+            <div class="event">
+                <span class="time">14:00</span> - 晴空塔觀景台 & 購物
+            </div>
+            <div class="event">
+                <span class="time">16:00</span> - 前往上野-阿美橫町
+            </div>
+            <div class="event">
+                <span class="time">19:00</span> - 晚餐 米久本店(壽喜燒)
+            </div>
+            <div class="event">
+                <span class="time">20:00</span> - 前往秋葉原 購物
+            </div>
+            <div class="event">
+                <span class="time">22:00</span> - 回南千住
+            </div>
+        </div>
 
         <h2>📌 淺草</h2>
         <div class="place-container">
@@ -808,13 +815,14 @@
             </div>
         </div>
 
-        <h3>📌 MEMO</h3>
-        <textarea id="note" placeholder="請輸入..."></textarea>
-
-        <!-- 按鈕 -->
-        <div class="btn-container">
-            <button onclick="saveData()">儲存</button>
-            <button onclick="clearData()">清除</button>
+        <div class="place-container">
+            <h3>📌 MEMO</h3>
+            <textarea id="note" placeholder="請輸入..."></textarea>
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">儲存</button>
+                <button onclick="clearData()">清除</button>
+            </div>
         </div>
 
         <!-- 這裡是上下頁和返回選單按鈕 -->
@@ -826,67 +834,77 @@
     </div>
 
     <div id="itinerary-4" class="itinerary" style="display: none;">
-        <h3>第四天</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>時間</th>
-                    <th>行程</th>
-                    <th>備註</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>早上</td>
-                    <td>南千住<br>⬇️</br>築地市場</td>
-                    <td>車票 ¥-</td>
-                </tr>
-                <tr>
-                    <td>下午</td>
-                    <td>築地市場<br>⬇️</br>銀座</td>
-                    <td>車票 ¥-</td>
-                </tr>
-                <tr>
-                    <td>晚上</td>
-                    <td>銀座<br>⬇️</br>東京車站</td>
-                    <td>車票 ¥-</td>
-                </tr>
-                <tr>
-                    <td>回家</td>
-                    <td>東京車站<br>⬇️</br>南千住</td>
-                    <td>車票 ¥-</td>
-                </tr>
-            </tbody>
-        </table>
+
+        <div class="timeline">
+            <div class="day">Day 4 - 築地→銀座→東京車站</div>
+            <div class="event">
+                <span class="time">08:50</span> - 南千住>築地市場
+            </div>
+            <div class="event">
+                <span class="time">09:25</span> - 築地市場早餐巡禮
+            </div>
+            <div class="event">
+                <span class="time">10:30</span> - 築地本願寺參拜&休息
+            </div>
+            <div class="event">
+                <span class="time">11:00</span> - 前往銀座
+                <li>搭乘東京Metro日比谷線</li>
+            </div>
+            <div class="event">
+                <span class="time">11:30</span> - 銀座購物巡禮
+            </div>
+            <div class="event">
+                <span class="time">15:00</span> - 銀座甜點&咖啡
+            </div>
+            <div class="event">
+                <span class="time">17:00</span> - 前往東京車站
+                <li>搭乘Metro丸之內線</li>
+            </div>
+            <div class="event">
+                <span class="time">19:00</span> - 晚餐&探索東京車站
+            </div>
+            <div class="event">
+                <span class="time">20:00</span> - 東京車站夜景
+                <li>丸之內大樓夜景散步</li>
+            </div>
+            <div class="event">
+                <span class="time">22:00</span> - 回南千住民宿
+            </div>
+        </div>
 
         <h2>📍 築地市場</h2>
         <div class="place-container">
             <div class="place">
-                <strong>壽司大（築地壽司）</strong>
-                <p class="hours">營業時間：05:00 - 14:00</p>
+                <strong>大和壽司 / 壽司大（人氣握壽司店，早點去排隊！）</strong>
             </div>
             <div class="place">
                 <strong>築地天國（炸天婦羅）</strong>
-                <p class="hours">營業時間：09:00 - 14:00</p>
             </div>
             <div class="place">
-                <strong>篩水餃（海鮮水餃）</strong>
-                <p class="hours">營業時間：06:00 - 14:00</p>
+                <strong>丸武玉子燒（甜口玉子燒）</strong>
+            </div>
+            <div class="place">
+                <strong>つきぢ松露（超人氣玉子三明治）</strong>
+            </div>
+            <div class="place">
+                <strong>築地海鮮丼（鮮美海鮮丼）</strong>
             </div>
         </div>
 
         <h2>📍 銀座</h2>
         <div class="place-container">
             <div class="place">
-                <strong>銀座天國（和牛壽喜燒）</strong>
-                <p class="hours">營業時間：11:30 - 22:00</p>
+                <strong>HARBS（水果千層蛋糕）</strong>
             </div>
             <div class="place">
                 <strong>銀座一丁目角的壽司店</strong>
                 <p class="hours">營業時間：12:00 - 22:00</p>
             </div>
             <div class="place">
-                <strong>無印良品銀座店</strong>
+                <strong>銀座篝（雞白湯拉麵）</strong>
+            </div>
+            <div class="place">
+                <strong>無印良品旗艦店 & UNIQLO銀座全球旗艦店</strong>
             </div>
             <div class="place">
                 <strong>銀座四丁目交叉口（繁華商圈）</strong>
@@ -913,13 +931,14 @@
             </div>
         </div>
 
-        <h3>📌 MEMO</h3>
-        <textarea id="note" placeholder="請輸入..."></textarea>
-
-        <!-- 按鈕 -->
-        <div class="btn-container">
-            <button onclick="saveData()">儲存</button>
-            <button onclick="clearData()">清除</button>
+        <div class="place-container">
+            <h3>📌 MEMO</h3>
+            <textarea id="note" placeholder="請輸入..."></textarea>
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">儲存</button>
+                <button onclick="clearData()">清除</button>
+            </div>
         </div>
 
         <!-- 這裡是上下頁和返回選單按鈕 -->
@@ -931,81 +950,63 @@
     </div>
 
     <div id="itinerary-5" class="itinerary" style="display: none;">
-        <h3>第五天</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>時間</th>
-                    <th>行程</th>
-                    <th>備註</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>早上</td>
-                    <td>南千住<br>⬇️</br>池袋</td>
-                    <td>車票 ¥210</td>
-                </tr>
-                <tr>
-                    <td>中午</td>
-                    <td>池袋<br>⬇️</br>豪德寺</td>
-                    <td>車票 ¥178</td>
-                </tr>
-                <tr>
-                    <td>下午</td>
-                    <td>豪德寺<br>⬇️</br>澀谷</td>
-                    <td>車票 ¥286</td>
-                </tr>
-                <tr>
-                    <td>晚上</td>
-                    <td>澀谷<br>⬇️</br>新宿</td>
-                    <td>車票 ¥286</td>
-                </tr>
-                <tr>
-                    <td>回家</td>
-                    <td>新宿<br>⬇️</br>南千住</td>
-                    <td>車票 ¥286</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="timeline">
+            <div class="day">Day 5 - 池袋→豪德寺→澀谷→新宿</div>
+            <div class="event">
+                <span class="time">08:50</span> - 南千住>池袋
+            </div>
+            <div class="event">
+                <span class="time">09:25</span> - 池袋吃早餐
+            </div>
+            <div class="event">
+                <span class="time">11:00</span> - 前往豪德寺
+                <li>JR山手線 + 小田急線 / 東急世田谷線</li>
+            </div>
+            <div class="event">
+                <span class="time">11:30</span> - 豪德寺招財貓巡禮
+            </div>
+            <div class="event">
+                <span class="time">13:30</span> - 前往澀谷
+                <li>搭乘小田急線 / 京王井之頭線</li>
+            </div>
+            <div class="event">
+                <span class="time">14:00</span> - 澀谷午餐&探索
+            </div>
+            <div class="event">
+                <span class="time">18:00</span> - 前往新宿
+                <li>搭乘JR山手線</li>
+            </div>
+            <div class="event">
+                <span class="time">19:00</span> - 新宿晚餐&夜生活
+            </div>
+            <div class="event">
+                <span class="time">22:00</span> - 返回民宿
+            </div>
+        </div>
         <h2>📍 池袋</h2>
         <div class="place-container">
-            <h3>🍽️ 必吃美食</h3>
+            <h3>🍽️ 早餐推薦</h3>
             <div class="place">
-                <strong>無敵家拉麵（無敵家ラーメン）⭐</strong>
-                <li>
-                    招牌濃厚豚骨拉麵，叉燒超大塊
-                </li>
-                <p class="hours">營業時間：10:30 - 23:00</p>
+                <strong>COFFEE VALLEY(三層拿鐵&吐司套餐)</strong>
             </div>
             <div class="place">
-                <strong>三田製麵所 池袋西口店</strong>
-                <li>
-                    超人氣沾麵，麵條Q彈有嚼勁
-                </li>
-                <p class="hours">營業時間：11:00 - 23:00</p>
+                <strong>Hoshino Coffee 星奶咖啡店(舒芙蕾鬆餅)</strong>
+            </div>
+            <div class="place">
+                <strong>池袋站內百貨美食區（Ekiben、麵包店</strong>
             </div>
             <h3>🎡 必逛景點</h3>
             <div class="place">
                 <strong>陽光水族館（サンシャイン水族館）</strong>
-                <li>
-                    池袋最受歡迎的室內水族館
-                </li>
-                <p class="hours">營業時間：10:00 - 18:00</p>
             </div>
             <div class="place">
                 <strong>NAMJATOWN 娜姆嘉樂園</strong>
-                <li>
-                    超適合動漫迷的小型主題樂園
-                </li>
             </div>
             <div class="place">
                 <strong>BOOK AND BED TOKYO</strong>
-                <li>
-                    書店 x 旅館的結合，拍照超美
-                </li>
             </div>
         </div>
+
         <h2>📍 豪德寺</h2>
         <div class="place-container">
             <h3>🍽️ 必吃美食</h3>
@@ -1043,67 +1044,35 @@
             <h3>🍽️ 必吃美食</h3>
             <div class="place">
                 <strong>牛かつ もと村（牛舌炸牛排）⭐</strong>
-                <li>
-                    超人氣炸牛排店，外脆內嫩
-                </li>
-                <p class="hours">營業時間：11:00 - 22:00</p>
             </div>
             <div class="place">
-                <strong>TORO 渋谷</strong>
-                <li>
-                    道地的墨西哥料理，氣氛很好
-                </li>
-                <p class="hours">營業時間：11:30 - 23:00</p>
+                <strong>鳥貴族（平價串燒居酒屋）</strong>
             </div>
             <div class="place">
-                <strong>幸也寿司</strong>
-                <li>
-                    網美系壽司，擺盤超美
-                </li>
-                <p class="hours">營業時間：17:00 - 23:00</p>
+                <strong>Afuri拉麵（柚子鹽拉麵，清爽系）</strong>
             </div>
             <h3>🎡 必逛景點</h3>
             <div class="place">
                 <strong>澀谷天空 SHIBUYA SKY ⭐</strong>
-                <li>
-                    澀谷最高樓頂，可以360度俯瞰東京夜景
-                </li>
             </div>
             <div class="place">
                 <strong>SHIBUYA 109</strong>
-                <li>
-                    澀谷最有名的時尚購物中心
-                </li>
             </div>
             <div class="place">
                 <strong>宮下公園 & MIYASHITA PARK</strong>
-                <li>
-                    網美打卡新熱點，結合公園與購物中心
-                </li>
             </div>
         </div>
         <h2>📍 新宿</h2>
         <div class="place-container">
             <h3>🍽️ 必吃美食</h3>
             <div class="place">
-                <strong>利久牛舌（ねぎし）⭐</strong>
-                <li>
-                    招牌炭燒牛舌，Q彈多汁
-                </li>
-                <p class="hours">營業時間：11:00 - 23:00</p>
+                <strong>Sushizanmai壽司三昧⭐</strong>
             </div>
             <div class="place">
                 <strong>新宿思い出横丁（思い出橫丁居酒屋）</strong>
-                <li>
-                    一整排日式居酒屋，氣氛超棒
-                </li>
             </div>
             <div class="place">
                 <strong>風雲児（超濃郁沾麵）</strong>
-                <li>
-                    沾麵界的傳奇，超濃魚介湯頭
-                </li>
-                <p class="hours">營業時間：11:00 - 21:00</p>
             </div>
             <h3>🎡 必逛景點</h3>
             <div class="place">
@@ -1126,13 +1095,14 @@
             </div>
         </div>
 
-        <h3>📌 MEMO</h3>
-        <textarea id="note" placeholder="請輸入..."></textarea>
-
-        <!-- 按鈕 -->
-        <div class="btn-container">
-            <button onclick="saveData()">儲存</button>
-            <button onclick="clearData()">清除</button>
+        <div class="place-container">
+            <h3>📌 MEMO</h3>
+            <textarea id="note" placeholder="請輸入..."></textarea>
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">儲存</button>
+                <button onclick="clearData()">清除</button>
+            </div>
         </div>
 
         <!-- 這裡是上下頁和返回選單按鈕 -->
@@ -1312,13 +1282,14 @@
             </div>
         </div>
 
-        <h3>📌 MEMO</h3>
-        <textarea id="note" placeholder="請輸入..."></textarea>
-
-        <!-- 按鈕 -->
-        <div class="btn-container">
-            <button onclick="saveData()">儲存</button>
-            <button onclick="clearData()">清除</button>
+        <div class="place-container">
+            <h3>📌 MEMO</h3>
+            <textarea id="note" placeholder="請輸入..."></textarea>
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">儲存</button>
+                <button onclick="clearData()">清除</button>
+            </div>
         </div>
 
         <!-- 這裡是上下頁和返回選單按鈕 -->
@@ -1330,28 +1301,16 @@
     </div>
 
     <div id="itinerary-7" class="itinerary" style="display: none;">
-        <h3>第七天</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>時間</th>
-                    <th>行程</th>
-                    <th>備註</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>06:00</td>
-                    <td>三井花園酒店<br>⬇</br>東京迪士尼</td>
-                    <td>接駁車<br>06:45、55</br></td>
-                </tr>
-                <tr>
-                    <td>晚上</td>
-                    <td>東京迪士尼<br>⬇</br>三井花園酒店</td>
-                    <td>接駁車<br>(10分鐘一班)</br></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="timeline">
+            <div class="day">Day 7 - 東京迪士尼</div>
+            <div class="event">
+                <span class="time">06:45</span> - 搭乘飯店接駁前往迪士尼
+            </div>
+            <div class="event">
+                <span class="time">10:35</span> - 搭乘飯店接駁回飯店
+            </div>
+        </div>
+
         <h2>🎢 遊玩攻略</h2>
         <div class="place-container">
             <div class="place">
@@ -1382,13 +1341,14 @@
             </div>
         </div>
 
-        <h3>📌 MEMO</h3>
-        <textarea id="note" placeholder="請輸入..."></textarea>
-
-        <!-- 按鈕 -->
-        <div class="btn-container">
-            <button onclick="saveData()">儲存</button>
-            <button onclick="clearData()">清除</button>
+        <div class="place-container">
+            <h3>📌 MEMO</h3>
+            <textarea id="note" placeholder="請輸入..."></textarea>
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">儲存</button>
+                <button onclick="clearData()">清除</button>
+            </div>
         </div>
 
         <!-- 這裡是上下頁和返回選單按鈕 -->
@@ -1400,50 +1360,34 @@
     </div>
 
     <div id="itinerary-8" class="itinerary" style="display: none;">
-        <h3>第八天</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>時間</th>
-                    <th>行程</th>
-                    <th>備註</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>10:30</td>
-                    <td>三井花園酒店<br>⬇️</br>酒酒井</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>16:30</td>
-                    <td>酒酒井<br>⬇️</br>成田機場</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>18:35-21:45</td>
-                    <td>🛬NRT<br>⬇️</br>🛫KHH</td>
-                    <td>飛機餐</td>
-                </tr>
-                <tr>
-                    <td>18:30</td>
-                    <td>酒酒井<br>⬇️</br>成田機場</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>20:40-23:20</td>
-                    <td>🛬NRT<br>⬇️</br>🛫TPE</td>
-                    <td>飛機餐</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="timeline">
+            <div class="day">Day 8 - 東京之旅要結束了</div>
+            <div class="event">
+                <span class="time">10:30</span> - 退房前往酒酒井
+            </div>
+            <div class="event">
+                <span class="time">16:30</span> - (🛫KHH)前往成田機場
+            </div>
+            <div class="event">
+                <span class="time">18:30</span> - (🛫TPE)前往成田機場
+            </div>
+            <div class="event">
+                <span class="time">18:35-21:45</span> - (🛫NRT)>(🛬KHH)
+            </div>
+            <div class="event">
+                <span class="time">20:40-23:20</span> - (🛫NRT)>(🛬TPE)
+            </div>
+        </div>
 
-        <h3>📌 MEMO</h3>
-        <textarea id="note" placeholder="請輸入..."></textarea>
 
-        <div class="btn-container">
-            <button onclick="saveData()">儲存</button>
-            <button onclick="clearData()">清除</button>
+        <div class="place-container">
+            <h3>📌 MEMO</h3>
+            <textarea id="note" placeholder="請輸入..."></textarea>
+            <!-- 按鈕 -->
+            <div class="btn-container">
+                <button onclick="saveData()">儲存</button>
+                <button onclick="clearData()">清除</button>
+            </div>
         </div>
 
         <!-- 這裡是上下頁和返回選單按鈕 -->
