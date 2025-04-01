@@ -304,7 +304,7 @@
         }
 
         .day {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             color: #333;
             margin-top: 20px;
@@ -348,11 +348,8 @@
             <li><input type="checkbox" id="item1"> 護照 & 身分證</li>
             <li><input type="checkbox" id="item2"> 外幣 & 信用卡</li>
             <li><input type="checkbox" id="item3"> 換洗衣物</li>
-            <li>衣服、褲子、內衣褲、帽子、襪子、外套</li>
             <li><input type="checkbox" id="item4"> 充電器 & 行動電源</li>
-            <li>行動電源要貼起來放夾鏈袋</li>
             <li><input type="checkbox" id="item5"> 盥洗用品</li>
-            <li>洗面乳、洗臉巾、牙膏牙刷、毛巾</li>
             <li><input type="checkbox" id="item6"> 個人藥品</li>
         </ul>
         <!-- 上下頁和返回選單按鈕 -->
@@ -414,7 +411,7 @@
 
     <div id="itinerary-1" class="itinerary" style="display: none;">
         <div class="timeline">
-            <div class="day">Day 1 - 抵達東京</div>
+            <div class="day">🛬 Day 1｜抵達東京</div>
             <div class="event">
                 <span class="time">13:00-17:35</span> - 🛫KHH > 🛬NRT
             </div>
@@ -529,9 +526,10 @@
 
     <div id="itinerary-2" class="itinerary" style="display: none;">
         <div class="timeline">
-            <div class="day">Day 2 - 木更津outlet</div>
+            <div class="day">🛍️ Day 2｜木更津 OUTLET 購物</div>
             <div class="event">
                 <span class="time">08:50-09:10</span> - 南千住>東京車站
+                <li>🚆搭乘日比谷線+JR山手線</li>
             </div>
             <div class="event">
                 <span class="time">09:25</span> - 八重洲B2(12號)>木更津OUTLET
@@ -543,9 +541,12 @@
             </div>
             <div class="event">
                 <span class="time">21:20-22:30</span> - 東京車站B1(吃晚餐)
+                <li>✅ 「大阪燒 きじ」（道地大阪燒）</li>
+                <li>✅ 「炸豬排 まい泉」（東京有名炸豬排）</li>
             </div>
             <div class="event">
                 <span class="time">22:30</span> - 東京車站>南千住
+                <li>🚆搭乘JR山手線+日比谷線</li>
             </div>
         </div>
 
@@ -745,9 +746,10 @@
 
     <div id="itinerary-3" class="itinerary" style="display: none;">
         <div class="timeline">
-            <div class="day">Day 3 - 淺草→上野→晴空塔→秋葉原</div>
+            <div class="day">🏮 Day 3｜淺草、上野、晴空塔、秋葉原</div>
             <div class="event">
-                <span class="time">08:50</span> - 南千住>淺草站
+                <span class="time">08:50</span> - 南千住→淺草
+                <li>🚆東京 Metro 日比谷線</li>
             </div>
             <div class="event">
                 <span class="time">09:25</span> - 早餐-淺草晨食屋
@@ -756,7 +758,8 @@
                 <span class="time">10:30</span> - 淺草雷門/淺草寺/仲見世商店街
             </div>
             <div class="event">
-                <span class="time">12:00</span> - 前往晴空塔 經過隅田川
+                <span class="time">12:00</span> - 淺草→晴空塔
+                <li>🚆都營淺草線至押上站</li>
             </div>
             <div class="event">
                 <span class="time">12:30</span> - 午餐 六厘舍（濃厚魚介沾麵）
@@ -765,16 +768,25 @@
                 <span class="time">14:00</span> - 晴空塔觀景台 & 購物
             </div>
             <div class="event">
-                <span class="time">16:00</span> - 前往上野-阿美橫町
+                <span class="time">16:00</span> - 晴空塔→上野
+                <li>🚆東武 Skytree Line 至上野站</li>
             </div>
             <div class="event">
-                <span class="time">19:00</span> - 晚餐 米久本店(壽喜燒)
+                <span class="time">16:30</span> - 逛上野公園 & 阿美橫町
             </div>
             <div class="event">
-                <span class="time">20:00</span> - 前往秋葉原 購物
+                <span class="time">18:30</span> - 上野晚餐（燒肉 / 壽喜燒）
             </div>
             <div class="event">
-                <span class="time">22:00</span> - 回南千住
+                <span class="time">20:00</span> - 上野→秋葉原
+                <li>🚆JR 山手線至秋葉原</li>
+            </div>
+            <div class="event">
+                <span class="time">20:05</span> - 逛秋葉原（Animate、電器街）
+            </div>
+            <div class="event">
+                <span class="time">22:00</span> - 秋葉原→南千住
+                <li>🚆日比谷線</li>
             </div>
         </div>
 
@@ -881,39 +893,44 @@
     <div id="itinerary-4" class="itinerary" style="display: none;">
 
         <div class="timeline">
-            <div class="day">Day 4 - 築地→銀座→東京車站</div>
+            <div class="day">🍣 Day 4｜築地市場、銀座、東京車站</div>
             <div class="event">
-                <span class="time">08:50</span> - 南千住>築地市場
+                <span class="time">08:50</span> - 南千住 → 築地市場
+                <li>🚆搭乘日比谷線</li>
             </div>
             <div class="event">
-                <span class="time">09:25</span> - 築地市場早餐巡禮
+                <span class="time">09:25</span> - 築地市場早餐（壽司大 / 海鮮丼）
             </div>
             <div class="event">
-                <span class="time">10:30</span> - 築地本願寺參拜&休息
+                <span class="time">10:30</span> - 逛築地場外市場
             </div>
             <div class="event">
-                <span class="time">11:00</span> - 前往銀座
-                <li>搭乘東京Metro日比谷線</li>
+                <span class="time">11:00</span> - 築地市場 → 銀座
+                <li>🚆搭成東京 Metro 銀座線</li>
             </div>
             <div class="event">
-                <span class="time">11:30</span> - 銀座購物巡禮
+                <span class="time">11:30</span> - 逛 UNIQLO、三越百貨、Loft、無印良品
+            </div>
+            <div class="event">
+                <span class="time">13:30</span> - 午餐（銀座梅林炸豬排）
             </div>
             <div class="event">
                 <span class="time">15:00</span> - 銀座甜點&咖啡
             </div>
             <div class="event">
-                <span class="time">17:00</span> - 前往東京車站
-                <li>搭乘Metro丸之內線</li>
+                <span class="time">18:00</span> - 銀座 → 東京車站
+                <li>🚆搭乘Metro丸之內線</li>
             </div>
             <div class="event">
-                <span class="time">19:00</span> - 晚餐&探索東京車站
+                <span class="time">19:00</span> - 東京車站一番街（動漫周邊 & 拉麵街）
             </div>
             <div class="event">
                 <span class="time">20:00</span> - 東京車站夜景
                 <li>丸之內大樓夜景散步</li>
             </div>
             <div class="event">
-                <span class="time">22:00</span> - 回南千住民宿
+                <span class="time">22:00</span> - 東京車站 → 南千住
+                <li>🚆搭乘日比谷線</li>
             </div>
         </div>
 
@@ -996,36 +1013,47 @@
 
     <div id="itinerary-5" class="itinerary" style="display: none;">
         <div class="timeline">
-            <div class="day">Day 5 - 池袋→豪德寺→澀谷→新宿</div>
+            <div class="day">🗼Day 5｜豪德寺、池袋、澀谷、新宿</div>
             <div class="event">
-                <span class="time">08:50</span> - 南千住>池袋
+                <span class="time">08:50</span> - 南千住 → 豪德寺
+                <li>🚆搭乘JR山手線→小田急線</li>
             </div>
             <div class="event">
-                <span class="time">09:25</span> - 池袋吃早餐
+                <span class="time">09:25</span> - 參觀豪德寺（招財貓寺）
             </div>
             <div class="event">
-                <span class="time">11:00</span> - 前往豪德寺
-                <li>JR山手線 + 小田急線 / 東急世田谷線</li>
+                <span class="time">10:30</span> - 豪德寺 → 池袋
+                <li>🚆搭乘小田急線 → JR 山手線</li>
             </div>
             <div class="event">
-                <span class="time">11:30</span> - 豪德寺招財貓巡禮
+                <span class="time">11:30</span> - 逛池袋 SUNSHINE CITY
             </div>
             <div class="event">
-                <span class="time">13:30</span> - 前往澀谷
-                <li>搭乘小田急線 / 京王井之頭線</li>
+                <span class="time">12:30</span> - 午餐（無敵家拉麵）
             </div>
             <div class="event">
-                <span class="time">14:00</span> - 澀谷午餐&探索
+                <span class="time">14:00</span> - 池袋 → 澀谷
+                <li>🚆搭乘JR山手線</li>
             </div>
             <div class="event">
-                <span class="time">18:00</span> - 前往新宿
-                <li>搭乘JR山手線</li>
+                <span class="time">14:30</span> - 忠犬八公像 & SHIBUYA SKY
             </div>
             <div class="event">
-                <span class="time">19:00</span> - 新宿晚餐&夜生活
+                <span class="time">15:30</span> - 逛 SHIBUYA 109
             </div>
             <div class="event">
-                <span class="time">22:00</span> - 返回民宿
+                <span class="time">18:30</span> - 澀谷 → 新宿
+                <li>🚆搭乘JR山手線</li>
+            </div>
+            <div class="event">
+                <span class="time">19:00</span> - 逛歌舞伎町 / 小巷探險
+            </div>
+            <div class="event">
+                <span class="time">19:30</span> - 晚餐（燒肉 / 居酒屋）
+            </div>
+            <div class="event">
+                <span class="time">22:00</span> - 新宿 → 南千住
+                <li>🚆搭乘JR山手線 + 日比谷線</li>
             </div>
         </div>
         <h2>📍 池袋</h2>
@@ -1160,27 +1188,40 @@
 
     <div id="itinerary-6" class="itinerary" style="display: none;">
         <div class="timeline">
-            <div class="day">Day 6 - 原宿→御臺場→新浦安</div>
+            <div class="day">🚗 Day 6｜原宿、御台場、新浦安（換飯店）</div>
             <div class="event">
-                <span class="time">08:50</span> - 南千住>原宿
+                <span class="time">08:50</span> - 南千住 → 原宿
+                <li>🚆搭乘JR山手線</li>
             </div>
             <div class="event">
-                <span class="time">09:25</span> - 原宿早餐
+                <span class="time">09:25</span> - 明治神宮
+            </div>
+            <div class="event">
+                <span class="time">10:00</span> - 竹下通（潮流時尚）
+            </div>
+            <div class="event">
+                <span class="time">12:00</span> - 午餐
                 <li>Bills 鬆餅、杏桃鬆餅咖啡</li>
             </div>
             <div class="event">
-                <span class="time">11:30</span> - 前往御臺場
-                <li>搭乘 JR 山手線 → 百合海鷗線</li>
+                <span class="time">13:30</span> - 原宿 → 御台場
+                <li>🚆搭乘 JR 山手線 → 百合海鷗線</li>
             </div>
             <div class="event">
-                <span class="time">12:30</span> - 御台場午餐 & 觀光
+                <span class="time">14:30</span> - DiverCity Tokyo Plaza（鋼彈像）
             </div>
             <div class="event">
-                <span class="time">18:00</span> - 搭車前往新浦安（三井花園飯店）
-                <li>百合海鷗線 → JR京葉線</li>
+                <span class="time">14:30</span> - teamLab Borderless（如有開幕）
             </div>
             <div class="event">
-                <span class="time">19:00</span> - 新浦安晚餐 & 飯店休息
+                <span class="time">17:30</span> - 晚餐（御台場 Aqua City / 燒肉 / 拉麵）
+            </div>
+            <div class="event">
+                <span class="time">18:30</span> - 御台場 → 新浦安
+                <li>🚆搭乘百合海鷗線 → JR京葉線</li>
+            </div>
+            <div class="event">
+                <span class="time">19:30</span> - 抵達三井花園飯店，入住
             </div>
         </div>
 
@@ -1295,14 +1336,47 @@
 
     <div id="itinerary-7" class="itinerary" style="display: none;">
         <div class="timeline">
-            <div class="day">Day 7 - 東京迪士尼</div>
+            <div class="day">🎢 Day 7｜東京迪士尼樂園</div>
             <div class="event">
                 <span class="time">06:45</span> - 搭乘飯店接駁前往迪士尼
             </div>
             <div class="event">
-                <span class="time">10:35</span> - 搭乘飯店接駁回飯店
+                <span class="time">22:35</span> - 搭乘飯店接駁回飯店
             </div>
         </div>
+
+        <h2>📍 飯店接駁時刻</h2>
+        <li>® Bus Terminal East Bus stop No.6 </li>
+        <table>
+            <thead>
+                <tr>
+                    <th>Hotel>Tokyo Disneyland®</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>06:45</td>
+                </tr>
+                <tr>
+                    <td>06:55</td>
+                </tr>
+                <tr>
+                    <td>07:05</td>
+                </tr>
+                <tr>
+                    <th>Tokyo Disneyland®>Hotel</th>
+                </tr>
+                <tr>
+                    <td>22:05</td>
+                </tr>
+                <tr>
+                    <td>22:15</td>
+                </tr>
+                <tr>
+                    <td>22:25</td>
+                </tr>
+            </tbody>
+        </table>
 
         <h2>🎢 遊玩攻略</h2>
         <div class="place-container">
@@ -1354,9 +1428,13 @@
 
     <div id="itinerary-8" class="itinerary" style="display: none;">
         <div class="timeline">
-            <div class="day">Day 8 - 東京之旅要結束了</div>
+            <div class="day">🛍️ Day 8｜最後購物 & 回台灣</div>
             <div class="event">
-                <span class="time">10:30</span> - 退房前往酒酒井
+                <span class="time">10:30</span> - 飯店 → 酒酒井 Outlet
+                <li>🚆搭乘JR + 巴士</li>
+            </div>
+            <div class="event">
+                <span class="time">11:30</span> - 退房前往酒酒井
             </div>
             <div class="event">
                 <span class="time">16:30</span> - (🛫KHH)前往成田機場
